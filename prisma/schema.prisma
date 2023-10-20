@@ -1,0 +1,202 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model CIMGMGTB {
+  IMG_SEQ      String  @db.VarChar(10)
+  IMG_FG       String  @db.VarChar(1)
+  PATH_NM      String? @db.VarChar(60)
+  FILE_NM      String? @db.VarChar(50)
+  CONTENTS     String? @db.VarChar(1000)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model EMPINFTB {
+  EMP_NO            String   @db.Char(4)
+  EMP_NM            String   @db.VarChar(10)
+  DEPT_CD           String?  @db.Char(2)
+  TEAM_CD           String?  @db.Char(2)
+  INLINE            String?  @db.Char(3)
+  HP_NO             String   @db.VarChar(15)
+  TEL_NO            String?  @db.VarChar(15)
+  E_MAIL            String?  @db.VarChar(50)
+  SEX               String?  @db.Char(1)
+  STATUS_FG         String?  @db.Char(1)
+  BIRTH_DAY         String?  @db.Char(8)
+  LS_FG             String?  @db.Char(1)
+  START_DATE        String?  @db.Char(8)
+  END_DATE          String?  @db.Char(8)
+  CLASS_FG          String?  @db.VarChar(1)
+  ROLL_FG           String?  @db.Char(1)
+  PHOTO             String?  @db.VarChar(20)
+  CREATE_DATE       String?  @db.Char(8)
+  LAST_DATE         String?  @db.Char(8)
+  USER_ID           String?  @db.VarChar(20)
+  SAWON_FG          String?  @db.Char(1)
+  EDIT_FG           String?  @db.Char(1)
+  CONFIRM_FG        String?  @db.Char(1)
+  ZIP_NO            String?  @db.VarChar(6)
+  ADDRESS           String?  @db.VarChar(100)
+  ADDRESS_BUNJI     String?  @db.VarChar(100)
+  EMERGENCY_TEL     String?  @db.VarChar(15)
+  PASSWD            String?  @db.VarChar(80)
+  IPCONTROL_FG      String?  @db.VarChar(20)
+  CHANGE_PW_DATE    String?  @db.VarChar(8)
+  PG_ADMIN_FG       String?  @db.Char(1)
+  LAST_LOGIN_DATE   String?  @db.VarChar(8)
+  PSS_POINT         Decimal? @db.Decimal(3, 0)
+  USE_POINT         Decimal? @db.Decimal(3, 0)
+  LOS_POINT         Decimal? @db.Decimal(3, 0)
+  LAT_POINT         Decimal? @db.Decimal(3, 0)
+  GRADE_FG          String?  @db.VarChar(1)
+  EMP_LEVEL         String?  @db.VarChar(1)
+  PASSWD_RESET_FG   String?  @db.VarChar(1)
+  OLD_PASSWD        String?  @db.VarChar(60)
+  NEW_ZIP_NO        String?  @db.VarChar(10)
+  NEW_ADDRESS       String?  @db.VarChar(120)
+  NEW_ADDRESS_BUNJI String?  @db.VarChar(120)
+  STREET_FG         String?  @db.VarChar(1)
+  MAIN_TECH_FG      String?  @db.VarChar(1)
+  TIME_FG           String?  @db.Char(1)
+  CREATE_DTIME      String?  @db.VarChar(14)
+  CREATE_ID         String?  @db.VarChar(20)
+  LAST_DTIME        String?  @db.VarChar(14)
+  LAST_ID           String?  @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNCMTB {
+  USER_ID      String  @db.VarChar(20)
+  MM_ID        String  @db.Char(2)
+  MM_NM        String  @db.VarChar(20)
+  IMG_SEQ      String  @db.VarChar(10)
+  POS_ID       String  @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNCUTB {
+  USER_ID      String  @db.VarChar(20)
+  MM_ID        String  @db.Char(2)
+  MENU_SEQ     String  @db.Char(6)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNMGTB {
+  MM_ID        String  @db.Char(2)
+  GM_ID        String  @db.Char(2)
+  GM_NM        String  @db.VarChar(60)
+  POS_ID       String  @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNMMTB {
+  MM_ID        String  @db.Char(2)
+  MM_NM        String  @db.VarChar(20)
+  IMG_SEQ      String  @db.VarChar(10)
+  POS_ID       String  @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNMSTB {
+  MENU_SEQ     String  @db.Char(6)
+  MM_ID        String  @db.Char(2)
+  GM_ID        String  @db.Char(2)
+  SM_ID        String  @db.Char(2)
+  SM_NM        String  @db.VarChar(60)
+  PATH_NM      String  @db.VarChar(60)
+  FILE_NM      String  @db.VarChar(50)
+  POS_ID       String  @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GMBNMUTB {
+  USER_ID      String  @db.VarChar(20)
+  MENU_SEQ     String  @db.Char(6)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GWDEPTTB {
+  DEPT_CD      String  @db.Char(2)
+  DEPT_NM      String  @db.VarChar(30)
+  SEQ          String? @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model GWTEAMTB {
+  DEPT_CD      String  @db.Char(2)
+  TEAM_CD      String  @db.Char(2)
+  DEPT_NM      String  @db.VarChar(30)
+  SEQ          String? @db.Char(2)
+  CREATE_DTIME String? @db.VarChar(14)
+  CREATE_ID    String? @db.VarChar(20)
+  LAST_DTIME   String? @db.VarChar(14)
+  LAST_ID      String? @db.VarChar(20)
+
+  @@ignore
+}
