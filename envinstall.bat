@@ -1,3 +1,3 @@
 @echo off
-REM cd /d "C:\path\to\your\npm\project"
+cd /d "C:\Program Files (x86)\KDS\App"
 npm install
